@@ -18,6 +18,7 @@ export interface FeatureItem {
   isPositive?: boolean; 
   isNegative?: boolean;
   highlight?: boolean; // For specific Sudarshan highlights
+  tooltip?: string; // Short explanation on hover
 }
 
 export const COMPARISON_DATA: ProductData[] = [
@@ -53,16 +54,67 @@ export const COMPARISON_DATA: ProductData[] = [
     buttonText: 'Join Revolution',
     buttonVariant: 'primary',
     features: [
-      { label: 'Entry Price', value: '₹89 one-time', isPositive: true, highlight: true },
-      { label: 'Setup Time', value: '24 hours', isPositive: true },
-      { label: 'Udyam Registration', value: 'FREE + handhold', isPositive: true },
-      { label: 'Local SEO Bundle', value: 'YES, free', isPositive: true },
-      { label: 'WhatsApp Selling', value: 'Native built-in', isPositive: true },
-      { label: 'Voice Dashboard', value: 'Hindi/Local langs', isPositive: true },
-      { label: 'Govt Schemes Link', value: 'Real-time built-in', isPositive: true },
-      { label: 'AI Chatbot', value: 'Included', isPositive: true },
-      { label: 'Community Support', value: 'Daily WhatsApp', isPositive: true },
-      { label: 'Compliance Help', value: 'Tax + GST auto', isPositive: true },
+      { 
+        label: 'Entry Price', 
+        value: '₹89 one-time', 
+        isPositive: true, 
+        highlight: true,
+        tooltip: "Pay once, own forever. No hidden monthly fees eating into your profits."
+      },
+      { 
+        label: 'Setup Time', 
+        value: '24 hours', 
+        isPositive: true,
+        tooltip: "We build and hand over a fully functional store in less than a day."
+      },
+      { 
+        label: 'Udyam Registration', 
+        value: 'FREE + handhold', 
+        isPositive: true,
+        tooltip: "We handle your official government business registration at no extra cost."
+      },
+      { 
+        label: 'Local SEO Bundle', 
+        value: 'YES, free', 
+        isPositive: true,
+        tooltip: "Your store is optimized to rank at the top of local Google searches."
+      },
+      { 
+        label: 'WhatsApp Selling', 
+        value: 'Native built-in', 
+        isPositive: true,
+        tooltip: "Receive orders and chat with customers directly on WhatsApp."
+      },
+      { 
+        label: 'Voice Dashboard', 
+        value: 'Hindi/Local langs', 
+        isPositive: true,
+        tooltip: "Manage your inventory and orders using voice commands in your language."
+      },
+      { 
+        label: 'Govt Schemes Link', 
+        value: 'Real-time built-in', 
+        isPositive: true,
+        tooltip: "Get instant alerts about government loans and subsidies for your business."
+      },
+      { 
+        label: 'AI Chatbot', 
+        value: 'Included', 
+        isPositive: true,
+        tooltip: "A smart 24/7 assistant that answers customer queries instantly."
+      },
+      { 
+        label: 'Community Support', 
+        value: 'Daily WhatsApp', 
+        isPositive: true,
+        tooltip: "Join an active community of sellers for daily tips and growth hacks."
+      },
+      { 
+        label: 'Compliance Help', 
+        value: 'Tax + GST auto', 
+        isPositive: true,
+        tooltip: "Automated tools to help you calculate taxes and stay GST compliant."
+      },
     ]
   },
   {

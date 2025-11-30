@@ -186,14 +186,14 @@ export const PricingCard: React.FC<PricingCardProps> = ({ product, index, active
                     : "none",
                   borderColor: isActive && isSudarshan ? "rgba(103, 232, 249, 1)" : "transparent",
                 }}
-                className={`relative flex items-center justify-between group rounded-xl px-3 py-3 transition-all duration-300 border border-transparent overflow-hidden ${
+                className={`relative flex items-center justify-between group rounded-xl px-3 py-3 transition-all duration-300 border border-transparent ${
                    isActive ? 'z-10' : 'z-0'
                 }`}
               >
                  {/* Specific Highlight Animation for key features (e.g. Entry Price) - Pulse Effect */}
                  {isHighlightedFeature && (
                    <motion.div 
-                     className="absolute inset-0 bg-cyan-400/20 z-0"
+                     className="absolute inset-0 bg-cyan-400/20 z-0 rounded-xl"
                      animate={{ 
                        opacity: [0.1, 0.4, 0.1],
                        scale: [1, 1.02, 1] 
@@ -210,9 +210,18 @@ export const PricingCard: React.FC<PricingCardProps> = ({ product, index, active
                  {/* Active scan line effect */}
                  {isActive && isSudarshan && (
                    <motion.div 
-                      className="absolute left-0 top-0 bottom-0 w-[3px] bg-cyan-300 shadow-[0_0_15px_#22d3ee]"
+                      className="absolute left-0 top-0 bottom-0 w-[3px] bg-cyan-300 shadow-[0_0_15px_#22d3ee] rounded-l-xl"
                       layoutId="activeFeatureBar"
                    />
+                 )}
+
+                 {/* Tooltip on Hover */}
+                 {feature.tooltip && (
+                   <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-48 p-3 bg-slate-900/95 backdrop-blur-xl border border-cyan-500/20 text-xs text-white rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.5)] opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 text-center scale-95 group-hover:scale-100">
+                     <p className="leading-tight">{feature.tooltip}</p>
+                     {/* Arrow */}
+                     <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-900/95"></div>
+                   </div>
                  )}
 
                  <div className="flex flex-col pr-2 relative z-10">
